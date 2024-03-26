@@ -36,5 +36,3 @@ class SearchPage extends StatelessWidget {
     );
   }
 }
-
-WeatherModel? weatherModel;
