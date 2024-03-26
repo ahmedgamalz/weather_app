@@ -6,14 +6,19 @@ import 'package:weather_app/screens/search_page.dart';
 import 'package:weather_app/widgets/noWeatherBody.dart';
 import 'package:weather_app/widgets/weatherBody.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Weather App'),
+        title: const Text('Weather App'),
         actions: [
           IconButton(
               onPressed: () {
@@ -21,7 +26,7 @@ class Home extends StatelessWidget {
                   return SearchPage();
                 }));
               },
-              icon: Icon(Icons.search)),
+              icon: const Icon(Icons.search)),
         ],
       ),
       body: BlocBuilder<GetWeatherCubit, WeatherState>(
